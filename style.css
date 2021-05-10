@@ -1,33 +1,51 @@
-#left-container {
+body {
+  font-family: "Newsreader", serif;
+}
+
+/*Refactoring the CSS */
+
+.terrarium-container {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: 1fr 10fr;
+  grid-template-areas:
+    "plant1 title plant2"
+    "plant1 jar plant2";
+}
+
+.title-container {
+  grid-area: title;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
   background-color: #eee;
-  width: 15%;
-  left: 0px;
-  top: 0px;
-  position: absolute;
-  height: 100%;
   padding: 10px;
 }
 
 #right-container {
-  background-color: #eee;
-  width: 15%;
-  right: 0px;
-  top: 0px;
-  position: absolute;
-  height: 100%;
-  padding: 10px;
+  grid-area: plant2;
+}
+
+#left-container {
+  grid-area: plant1;
+}
+
+#terrarium {
+  grid-area: jar;
 }
 
 .plant-holder {
   position: relative;
-  height: 13%;
-  left: -10px;
+  height: auto;
 }
 
 .plant {
   position: absolute;
   max-width: 150%;
   max-height: 150%;
+  cursor: pointer;
   z-index: 2;
 }
 
